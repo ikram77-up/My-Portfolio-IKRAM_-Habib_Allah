@@ -39,7 +39,7 @@ npm run build
 Pour démarrer le serveur de production :
 
 ```bash
-npm run start
+npm run dev
 ```
 
 ## Licence
