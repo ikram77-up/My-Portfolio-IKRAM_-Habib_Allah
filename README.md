@@ -1,51 +1,51 @@
-# My Portfolio - Ikram Habib Allah
+# Mon Portfolio - Ikram Habib Allah
 
-This is the personal portfolio website of Ikram Habib Allah, showcasing projects, experience, and formations.
+Ceci est le site web du portfolio personnel d'Ikram Habib Allah, présentant ses projets, son expérience et ses formations.
 
-## Technologies Used
+## Technologies Utilisées
 
-This project is built with Next.js, React, and TypeScript, styled with Tailwind CSS, and uses Zustand for state management.
+Ce projet est construit avec Next.js, React et TypeScript, stylisé avec Tailwind CSS, et utilise Zustand pour la gestion de l'état.
 
 ## Installation
 
-To run this project locally, follow these steps:
+Pour exécuter ce projet localement, suivez ces étapes :
 
-1.  Clone the repository:
+1.  Clonez le dépôt :
     ```bash
-    git clone https://github.com/your-username/your-portfolio.git
+    git clone https://github.com/ikram77-up/My-Portfolio-IKRAM_-Habib_Allah.git
     cd your-portfolio
     ```
-2.  Install dependencies:
+2.  Installez les dépendances :
     ```bash
     npm install
     ```
 
-## Usage
+## Utilisation
 
-To start the development server:
+Pour démarrer le serveur de développement :
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur pour voir le résultat.
 
-To build the project for production:
+Pour construire le projet pour la production :
 
 ```bash
 npm run build
 ```
 
-To start the production server:
+Pour démarrer le serveur de production :
 
 ```bash
 npm run start
 ```
 
-## Contributing
+## Contribution
 
-Feel free to fork the repository, make improvements, and submit pull requests.
+N'hésitez pas à forker le dépôt, à apporter des améliorations et à soumettre des pull requests.
 
-## License
+## Licence
 
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
