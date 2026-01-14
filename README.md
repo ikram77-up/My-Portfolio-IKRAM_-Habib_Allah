@@ -42,10 +42,6 @@ Pour démarrer le serveur de production :
 npm run start
 ```
 
-## Contribution
-
-N'hésitez pas à forker le dépôt, à apporter des améliorations et à soumettre des pull requests.
-
 ## Licence
 
 Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
