@@ -1,7 +1,7 @@
 "use client";
 
 import { Modal } from "@/components/ui/modal";
-import { useModalStore } from "@/hooks/use-modal-store";
+import { useModalStore } from "@/stores/modal-store";
 
 export const CustomModal = () => {
   const modalStore = useModalStore();

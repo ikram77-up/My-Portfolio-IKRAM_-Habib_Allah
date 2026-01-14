@@ -4,10 +4,7 @@ interface ModalDataProps {
   title: string;
   description: string;
   icon: any;
-  // link?: {
-  //     label: string;
-  //     link: string;
-  // }
+  onCloseCallback?: () => void;
 }
 
 interface ModalStoreProps {
@@ -15,21 +12,33 @@ interface ModalStoreProps {
   title: string;
   description: string;
   icon: any;
+  onCloseCallback?: () => void;
   onOpen: (data: ModalDataProps) => void;
   onClose: () => void;
 }
 
-export const useModalStore = create<ModalStoreProps>((set) => ({
+export const useModalStore = create<ModalStoreProps>((set, get) => ({
   isOpen: false,
   title: "",
   description: "",
   icon: null,
-  onOpen: (data: any) =>
+  onCloseCallback: undefined,
+  onOpen: (data: ModalDataProps) =>
     set({
       isOpen: true,
       title: data.title,
       description: data.description,
       icon: data.icon,
+      onCloseCallback: data.onCloseCallback,
     }),
-  onClose: () => set({ isOpen: false }),
+  onClose: () => {
+    get().onCloseCallback?.();
+    set({
+      isOpen: false,
+      title: "",
+      description: "",
+      icon: null,
+      onCloseCallback: undefined,
+    });
+  },
 }));
