@@ -21,95 +21,88 @@ export interface ProjectInterface {
   websiteLink?: string;
   githubLink?: string;
   techStack: ValidSkills[];
-  startDate: Date;
-  endDate: Date;
   coverImage: any;
   descriptionDetails: DescriptionDetailsInterface;
   pagesInfoArr?: PagesInfoInterface[];
+  year?: number;
 }
 
 export const Projects: ProjectInterface[] = [
  
   {
-    id: "the-super-quotes",
-    title: "Application The Super Quotes",
-    companyName: "The Super Quotes",
-    type: "Professional",
-    category: ["Mobile Dev", "Full Stack"],
+    id: "Gestion_De_Cinema",
+    title: "Site Web de Gestion de Cinéma",
+    companyName: "",
+    type: "Academique",
+    year: 2021,
+    category: ["Web Dev", "Full Stack"],
     shortDescription:
-      "Amélioration de l'application The Super Quotes avec JavaScript, React Native, des API, la magie de Redux et des débuts sur le Google Play Store.",
+      "Réalisation d'un site web de gestion de cinéma qui facilite au client de réserver un film dans le cinéma qui veut .",
     websiteLink:
-      "https://play.google.com/store/apps/details?id=com.thesuperlife",
-    techStack: ["React Native", "Node.js", "MongoDB", "Javascript"],
-    startDate: new Date("2021-07-01"),
-    endDate: new Date("2022-07-01"),
-    coverImage: "/projects/superquotes/logo.png",
+      "https://drive.google.com/file/d/1poD-7Qane6tSytQYsg2ZcyX0Yngu_XEK/view?usp=drive_link",
+      githubLink:
+      "https://github.com/ikram77-up/Gestion-de-cinema",
+    techStack: [ "Java/JEE ","Spring Boot","Spring MVC","Angular","Bootstrap","TypeScript", "Node.js", "MySQL",],
+   
+    coverImage: "/projects/gestionCineme/couverture.jpg",
     pagesInfoArr: [
       {
-        title: "Page de Visualisation des Citations",
+        title: "Affichage des Villes",
         description:
-          "Affichage de citations élégamment conçu avec des thèmes personnalisables et des options de partage",
-        imgArr: ["/projects/superquotes/app_2.webp"],
+          "présentation des interfaces (villes, Cinémas, Salle qui porte Projection qui va porter aussi les Flims et Les Séances et chaque séance porte le time et le prix et chaque prix demande le nom de client et le code de payement pour acheter le ticket pour regarder le films qui est dans chaque Projection",
+        imgArr: ["/projects/gestionCineme/img1.jpg"],
       },
       {
-        title: "Composant de Téléchargement de Citations",
+        title: "Affichage de cinéma pour chaque ville",
         description:
           "Fonctionnalité permettant aux utilisateurs de télécharger des citations sous forme de belles images pour le partage sur les réseaux sociaux",
         imgArr: [
-          "/projects/superquotes/app_4.webp",
-          "/projects/superquotes/app_7.webp",
+          "/projects/gestionCineme/img2.jpg"
         ],
       },
       {
-        title: "Gestion de Compte",
+        title: "interface d’Affichage des salles",
         description:
           "Gestion du profil utilisateur avec favoris, historique et paramètres de personnalisation",
-        imgArr: ["/projects/superquotes/app_6.webp"],
+        imgArr: ["/projects/gestionCineme/img3.jpg",
+          "/projects/gestionCineme/img4.jpg"],
       },
       {
-        title: "Page de Sélection et Mise à Jour des Intérêts",
+        title: "interface pour taper le nom de client et on code de payement",
         description:
           "Interface interactive pour que les utilisateurs sélectionnent et mettent à jour leurs préférences et intérêts de citations",
         imgArr: [
-          "/projects/superquotes/app_1.webp",
-          "/projects/superquotes/app_3.webp",
+          "/projects/gestionCineme/img5.jpg",
         ],
       },
       {
-        title: "Responsivité",
+        title: " affichage d'interface de Ticket est vendu par succès",
         description:
           "Design adaptatif assurant une expérience utilisateur optimale sur diverses tailles d'appareils et orientations",
-        imgArr: ["/projects/superquotes/app_5.webp"],
+        imgArr: ["/projects/gestionCineme/img6.jpg"],
       },
     ],
     descriptionDetails: {
       paragraphs: [
-        "S'aventurer dans le monde de la créativité chez The Super Quotes a été un voyage exaltant. En tant que développeur passionné, j'ai mené la charge dans la création d'une application convaincante de la conception à l'achèvement, utilisant le duo dynamique de JavaScript et React Native.",
-        "Le cœur de ma réalisation résidait dans l'intégration transparente des API, tissant une tapisserie de flux de données qui a propulsé la fonctionnalité de l'application vers de nouveaux sommets.",
-        "Avec la magie de Redux, j'ai chorégraphié une symphonie de gestion d'état et d'optimisation des performances, orchestrant un ballet de réactivité qui a séduit les utilisateurs à chaque interaction.",
-        "Un crescendo m'attendait alors que je dévoilais l'aboutissement de mon travail sur la grande scène du Google Play Store. Les débuts de l'application ont marqué une époque, ouvrant les portes à un large public désireux d'embrasser le charme de The Super Quotes.",
+        "Dans cadre de mon étude Ingénieur Informatique & Réseau Option MIAGE a l’Ecole Marocaine des sciences d’Ingénierie en 2éme semestre on étudier L’architecture JEE et notre prof demandé de réaliser une application web avec architecture JEE Application gestion des Cinémas Back-End avec Freamwork Spring Boot et FrontEnd avec Freamwork Angular (Consultations, Saisie, Ajout, Edition, Mise à jour et suppression) , Gestion des Salles et des Places ,Gestion Films ,Gestion Projection , Gestion des ventes des Tickets",
       ],
-      bullets: [
-        "Direction du développement de bout en bout d'une application captivante utilisant JavaScript et React Native.",
-        "Champion de l'intégration des API, harmonisant le flux de données et améliorant la fonctionnalité de l'application.",
-        "Réalisation de la magie Redux pour assurer la gestion de l'état et optimiser les performances, offrant une expérience utilisateur fascinante.",
-        "Lancement de l'application sur le Google Play Store, capturant les cœurs et élargissant sa base d'utilisateurs.",
-      ],
+      bullets: [],
     },
   },
   {
-    id: "apex-shopping",
-    title: "Application Shopping Apex",
-    companyName: "Apex Shopping",
-    type: "Personal",
-    category: ["Mobile Dev", "Full Stack"],
+    id: "mb-digital-business",
+    title: " Site Web MB Digital & Business",
+    companyName: "MB Digital & Business",
+    type: "Professional",
+    year: 2025,
+    category: ["Web Dev" ,"Full Stack","UI/UX"],
     shortDescription:
-      "Développement d'une application mobile de shopping riche en fonctionnalités avec panneau d'administration, authentification utilisateur et gestion transparente des produits utilisant React Native et Firebase.",
-    githubLink: "https://github.com/ikram77-up/apex-shopping-app",
-    techStack: ["React Native", "Javascript", "Redux", "Node.js", "express.js"],
-    startDate: new Date("2021-07-14"),
-    endDate: new Date("2022-07-01"),
-    coverImage: "/projects/apex/logo.png",
+      "Ce site web développé avec WordPress pour une entreprise multi-services composé d’un département centre d’appel et d’un département création et développement digital, le site présente les services, le recrutement, les formations, les blogs et un espace de contact avec une navigation claire et un design responsive.",
+       websiteLink:
+       "https://drive.google.com/file/d/1Ls8hQ3m6kaiXBZXI0qewSySTKf34RQWK/view?usp=drive_link",
+    githubLink: "",
+    techStack: ["WordPress","CMS","Zakra theme", "Javascript" , "Node.js", "HTML 5", "CSS 3"],
+    coverImage: "/projects/MBD/MBD.jpg",
     pagesInfoArr: [
       {
         title: "Écran de Démarrage",
@@ -163,18 +156,17 @@ export const Projects: ProjectInterface[] = [
     },
   },
   {
-    id: "builtdesign-blogs",
-    title: "Blogs Builtdesign",
-    companyName: "Builtdesign",
+    id: "kree app",
+    title: "Kree App",
+    companyName: "KREE",
     type: "Professional",
-    category: ["Full Stack"],
+    year: 2025,
+    category: ["Mobile Dev","Full Stack"],
     shortDescription:
-      "Création du site web vibrant de blogs de Builtdesign utilisant Netlify CMS et React pour des expériences de contenu engageantes.",
+      "Application mobile de ",
     websiteLink: "https://blog.builtdesign.in",
     techStack: ["Next.js", "React", "Node.js", "MongoDB", "Typescript"],
-    startDate: new Date("2022-03-01"),
-    endDate: new Date("2022-07-01"),
-    coverImage: "/projects/builtdesign-blogs/logo.png",
+    coverImage: "/projects/kree/cover.jpg",
     pagesInfoArr: [
       {
         title: "Page d'Accueil du Blog",
