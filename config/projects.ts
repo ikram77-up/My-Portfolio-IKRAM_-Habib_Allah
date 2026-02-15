@@ -1,34 +1,33 @@
-import { ValidCategory, ValidExpType, ValidSkills } from "./constants";
+import { ValidCategory, ValidExpType, ValidSkills } from "./constants"
 
 interface PagesInfoInterface {
-  title: string;
-  imgArr: string[];
-  description?: string;
+  title: string
+  imgArr: string[]
+  description?: string
 }
 
 interface DescriptionDetailsInterface {
-  paragraphs: string[];
-  bullets: string[];
+  paragraphs: string[]
+  bullets: string[]
 }
 
 export interface ProjectInterface {
-  id: string;
-  type: ValidExpType;
-  title: string;
-  companyName?: string;
-  category: ValidCategory[];
-  shortDescription: string;
-  websiteLink?: string;
-  githubLink?: string;
-  techStack: ValidSkills[];
-  coverImage: any;
-  descriptionDetails: DescriptionDetailsInterface;
-  pagesInfoArr?: PagesInfoInterface[];
-  year?: number;
+  id: string
+  type: ValidExpType
+  title: string
+  companyName?: string
+  category: ValidCategory[]
+  shortDescription: string
+  websiteLink?: string
+  githubLink?: string
+  techStack: ValidSkills[]
+  coverImage: any
+  descriptionDetails: DescriptionDetailsInterface
+  pagesInfoArr?: PagesInfoInterface[]
+  year?: number
 }
 
 export const Projects: ProjectInterface[] = [
- 
   {
     id: "Gestion_De_Cinema",
     title: "Site Web de Gestion de Cinéma",
@@ -40,10 +39,18 @@ export const Projects: ProjectInterface[] = [
       "Réalisation d'un site web de gestion de cinéma qui facilite au client de réserver un film dans le cinéma qui veut .",
     websiteLink:
       "https://drive.google.com/file/d/1poD-7Qane6tSytQYsg2ZcyX0Yngu_XEK/view?usp=drive_link",
-      githubLink:
-      "https://github.com/ikram77-up/Gestion-de-cinema",
-    techStack: [ "Java/JEE ","Spring Boot","Spring MVC","Angular","Bootstrap","TypeScript", "Node.js", "MySQL",],
-   
+    githubLink: "https://github.com/ikram77-up/Gestion-de-cinema",
+    techStack: [
+      "Java/JEE ",
+      "Spring Boot",
+      "Spring MVC",
+      "Angular",
+      "Bootstrap",
+      "TypeScript",
+      "Node.js",
+      "MySQL",
+    ],
+
     coverImage: "/projects/gestionCineme/couverture.jpg",
     pagesInfoArr: [
       {
@@ -56,24 +63,22 @@ export const Projects: ProjectInterface[] = [
         title: "Affichage de cinéma pour chaque ville",
         description:
           "Fonctionnalité permettant aux utilisateurs de télécharger des citations sous forme de belles images pour le partage sur les réseaux sociaux",
-        imgArr: [
-          "/projects/gestionCineme/img2.jpg"
-        ],
+        imgArr: ["/projects/gestionCineme/img2.jpg"],
       },
       {
         title: "interface d’Affichage des salles",
         description:
           "Gestion du profil utilisateur avec favoris, historique et paramètres de personnalisation",
-        imgArr: ["/projects/gestionCineme/img3.jpg",
-          "/projects/gestionCineme/img4.jpg"],
+        imgArr: [
+          "/projects/gestionCineme/img3.jpg",
+          "/projects/gestionCineme/img4.jpg",
+        ],
       },
       {
         title: "interface pour taper le nom de client et on code de payement",
         description:
           "Interface interactive pour que les utilisateurs sélectionnent et mettent à jour leurs préférences et intérêts de citations",
-        imgArr: [
-          "/projects/gestionCineme/img5.jpg",
-        ],
+        imgArr: ["/projects/gestionCineme/img5.jpg"],
       },
       {
         title: " affichage d'interface de Ticket est vendu par succès",
@@ -84,7 +89,7 @@ export const Projects: ProjectInterface[] = [
     ],
     descriptionDetails: {
       paragraphs: [
-        "Dans cadre de mon étude Ingénieur Informatique & Réseau Option MIAGE a l’Ecole Marocaine des sciences d’Ingénierie en 2éme semestre on étudier L’architecture JEE et notre prof demandé de réaliser une application web avec architecture JEE Application gestion des Cinémas Back-End avec Freamwork Spring Boot et FrontEnd avec Freamwork Angular (Consultations, Saisie, Ajout, Edition, Mise à jour et suppression) , Gestion des Salles et des Places ,Gestion Films ,Gestion Projection , Gestion des ventes des Tickets",
+        "Dans le cadre de mon étude Ingénieur Informatique & Réseau Option MIAGE a l’Ecole Marocaine des sciences d’Ingénierie en 2éme semestre on étudier L’architecture JEE et notre prof demandé de réaliser une application web avec architecture JEE Application gestion des Cinémas Back-End avec Freamwork Spring Boot et FrontEnd avec Freamwork Angular (Consultations, Saisie, Ajout, Edition, Mise à jour et suppression) , Gestion des Salles et des Places ,Gestion Films ,Gestion Projection , Gestion des ventes des Tickets",
       ],
       bullets: [],
     },
@@ -95,124 +100,166 @@ export const Projects: ProjectInterface[] = [
     companyName: "MB Digital & Business",
     type: "Professional",
     year: 2025,
-    category: ["Web Dev" ,"Full Stack","UI/UX"],
+    category: ["Web Dev", "Full Stack", "UI/UX"],
     shortDescription:
       "Ce site web développé avec WordPress pour une entreprise multi-services composé d’un département centre d’appel et d’un département création et développement digital, le site présente les services, le recrutement, les formations, les blogs et un espace de contact avec une navigation claire et un design responsive.",
-       websiteLink:
-       "https://drive.google.com/file/d/1Ls8hQ3m6kaiXBZXI0qewSySTKf34RQWK/view?usp=drive_link",
+    websiteLink:
+      "https://drive.google.com/file/d/1Ls8hQ3m6kaiXBZXI0qewSySTKf34RQWK/view?usp=drive_link",
     githubLink: "",
-    techStack: ["WordPress","CMS","Zakra theme", "Javascript" , "Node.js", "HTML 5", "CSS 3"],
+    techStack: [
+      "WordPress",
+      "CMS",
+      "Zakra theme",
+      "Javascript",
+      "Node.js",
+      "HTML 5",
+      "CSS 3",
+    ],
     coverImage: "/projects/MBD/MBD.jpg",
     pagesInfoArr: [
       {
-        title: "Écran de Démarrage",
-        description: "Écran de démarrage animé personnalisé avec l'image de marque de l'application",
-        imgArr: ["/projects/apex/app_7.webp"],
+        title: "page Home",
+        imgArr: ["/projects/MBD/acceuil.jpg"],
       },
       {
-        title: "Authentification Connexion/Inscription",
-        description: "Système d'authentification utilisateur sécurisé avec Firebase",
-        imgArr: ["/projects/apex/app_1.webp"],
+        title: "A propos page de MB Digital & Business",
+        imgArr: ["/projects/MBD/Apropos.jpg"],
       },
       {
-        title: "Écran d'Exploration de Tous les Produits",
-        description: "Navigation interactive des produits avec catégories et filtres",
-        imgArr: ["/projects/apex/app_3.webp"],
+        title: "page de services digital marketing de MB Digital & Business ",
+        imgArr: ["/projects/MBD/digital.jpg"],
       },
       {
-        title: "Panneau d'Administration",
-        description:
-          "Tableau de bord administratif complet pour la gestion des produits et des commandes",
-        imgArr: ["/projects/apex/app_4.webp", "/projects/apex/app_6.webp"],
+        title: "page de services telemarketing de MB Digital & Business ",
+        imgArr: ["/projects/MBD/telemaketing.jpg"],
       },
       {
-        title: "Navigation Latérale",
-        description: "Navigation latérale intuitive pour une navigation facile dans l'application",
-        imgArr: ["/projects/apex/app_5.webp"],
+        title: "page des formations de MB Digital & Business ",
+        imgArr: ["/projects/MBD/formations.jpg"],
       },
       {
-        title: "Base de Données Firebase",
-        description:
-          "Structure de base de données en temps réel pour une gestion efficace des données",
-        imgArr: ["/projects/apex/db.webp"],
+        title: "page des blogs de MB Digital & Business ",
+        imgArr: ["/projects/MBD/blogs.jpg"],
+      },
+      {
+        title: "page de contact de MB Digital & Business ",
+        imgArr: ["/projects/MBD/contact.jpg"],
       },
     ],
     descriptionDetails: {
       paragraphs: [
-        "L'application Apex Shopping représente une solution complète de commerce électronique mobile que j'ai développée à partir de zéro en utilisant React Native et Firebase. Ce projet met en valeur ma capacité à créer une application de shopping complète avec des fonctionnalités utilisateur et administrateur.",
-        "L'application dispose d'un système d'authentification robuste, permettant aux utilisateurs de s'inscrire et de se connecter en toute sécurité. L'interface d'exploration des produits est conçue avec l'expérience utilisateur à l'esprit, intégrant une navigation fluide et des options de filtrage intuitives.",
-        "L'un des points forts est le panneau d'administration, qui offre un contrôle complet sur la gestion des produits, le traitement des commandes et le suivi des stocks. L'intégration avec Firebase assure une synchronisation des données en temps réel et une persistance fiable des données.",
-        "L'architecture de l'application met l'accent sur l'évolutivité et la performance, utilisant Redux pour la gestion de l'état et suivant les meilleures pratiques pour le développement d'applications mobiles. Le design UI/UX se concentre sur la fourniture d'une expérience d'achat fluide sur différentes tailles d'appareils.",
+        "Ce projet porte sur le développement d’un site web professionnel sous WordPress destiné à une entreprise active dans deux secteurs complémentaires : le centre d’appel et le développement de solutions digitales, incluant les sites web et les applications mobiles. La mission consistait à concevoir une plateforme claire, moderne et intuitive, permettant de valoriser l’identité de l’entreprise, de présenter ses services et de mettre en avant ses opportunités de recrutement et de formation. Le site comprend plusieurs rubriques clés telles que À propos, Services, Recrutement, Formations, Blog et Contact, assurant une navigation fluide et une expérience utilisateur optimisée. Ce projet illustre mes compétences en WordPress, structuration de contenus, personnalisation de thèmes, design responsive et création de sites institutionnels orientés visibilité, performance et crédibilité.",
       ],
-      bullets: [
-        "Mise en œuvre d'une authentification et autorisation utilisateur sécurisées utilisant Firebase",
-        "Conception et développement d'un système intuitif de navigation de produits et de panier d'achat",
-        "Création d'un panneau d'administration complet pour la gestion des produits et des commandes",
-        "Intégration de la synchronisation des données en temps réel utilisant Firebase Database",
-        "Mise en œuvre de la gestion de l'état utilisant Redux pour une performance optimale",
-        "Conception de composants UI réactifs suivant les principes mobile-first",
-        "Incorporation d'animations et de transitions fluides pour une expérience utilisateur améliorée",
-      ],
+      bullets: [],
     },
   },
   {
-    id: "kree app",
+    id: "kree-app",
     title: "Kree App",
     companyName: "KREE",
     type: "Professional",
     year: 2025,
-    category: ["Mobile Dev","Full Stack"],
-    shortDescription:
-      "Application mobile de ",
-    websiteLink: "https://blog.builtdesign.in",
-    techStack: ["Next.js", "React", "Node.js", "MongoDB", "Typescript"],
+    category: ["Mobile Dev", "Full Stack"],
+    shortDescription: "Application mobile de ",
+    websiteLink:
+      "https://drive.google.com/file/d/10FXbS3wmaU2pdEAnyHxhSo9juJS4WexC/view?usp=drive_link",
+    githubLink: "https://github.com/ikram77-up/Kree-App.git",
+    techStack: [
+      "Node.js",
+      "MongoDB",
+      "express.js",
+      "Javascript",
+      "React Native",
+    ],
     coverImage: "/projects/kree/cover.jpg",
     pagesInfoArr: [
       {
-        title: "Page d'Accueil du Blog",
-        description:
-          "Page d'accueil moderne et réactive présentant les articles en vedette",
-        imgArr: ["/projects/builtdesign-blogs/blog_2.webp"],
+        title: "Page d'Accueil de l'application Kree",
+        imgArr: ["/projects/kree/kree1.jpg"],
       },
       {
-        title: "Liste des Blogs",
-        description:
-          "Affichage organisé de tous les articles de blog avec recherche et filtrage",
-        imgArr: ["/projects/builtdesign-blogs/blog_3.webp"],
+        title: "interface d'authentification de users de l'application Kree",
+        imgArr: ["/projects/kree/auth.jpg"],
       },
       {
-        title: "Navigation par Catégorie",
-        description: "Système de navigation intuitif basé sur les catégories",
-        imgArr: ["/projects/builtdesign-blogs/blog_1.webp"],
+        title: "interface profil d'agence",
+        imgArr: ["/projects/kree/agence.jpg"],
       },
       {
-        title: "Vue de l'Article",
-        description:
-          "Mise en page d'article propre et lisible avec support multimédia riche",
+        title: "interface agence",
+        imgArr: ["/projects/kree/attentrequest.jpg"],
+      },
+      {
+        title: "request envoye par client a agence",
+        imgArr: ["/projects/kree/notifclient.jpg"],
+      },
+      {
+        title: "agence a envoye offre a client",
+        imgArr: ["/projects/kree/carbyagence.jpg"],
+      },
+      {
+        title: "liste des voitures de l'agence",
+        imgArr: ["/projects/kree/listcars.jpg"],
+      },
+      {
+        title: "detail de voiture de l'agence",
+        imgArr: ["/projects/kree/deatailcar.jpeg"],
+      },
+      {
+        title: "interface de mise a jour d'une voiture de l'agence",
+        imgArr: ["/projects/kree/updatecar.jpg"],
+      },
+      {
+        title: "interface demande de voiture par client",
         imgArr: [
-          "/projects/builtdesign-blogs/blog_4.webp",
-          "/projects/builtdesign-blogs/blog_5.webp",
+          "/projects/kree/demande.jpg",
+          "/projects/kree/demandesuite.jpg",
         ],
+      },
+      {
+        title: "la demande de client envoie en succee a les agences",
+        imgArr: ["/projects/kree/demandesuccee.jpg"],
+      },
+      {
+        title: "offre de l'agence a envoye en succee a client",
+        imgArr: ["/projects/kree/offreagence.jpg"],
       },
     ],
     descriptionDetails: {
       paragraphs: [
-        "Dans le cadre de la plateforme Builtdesign, j'ai développé un site web de blog sophistiqué qui sert de centre de contenu pour le leadership d'opinion et les connaissances de l'industrie de l'entreprise. Le projet a exploité Next.js et React pour créer une plateforme rapide et conviviale pour le SEO.",
-        "La plateforme de blog présente un design moderne et réactif qui privilégie la lisibilité et l'engagement des utilisateurs. J'ai mis en œuvre un système de gestion de contenu robuste utilisant Netlify CMS, permettant à l'équipe de contenu de publier et de gérer facilement les articles de blog.",
-        "L'architecture comprend le rendu côté serveur pour une performance et un SEO optimaux, tandis que MongoDB fournit un stockage de contenu flexible. TypeScript assure la fiabilité et la maintenabilité du code tout au long de l'application.",
-        "Les principales caractéristiques comprennent la navigation basée sur les catégories, la fonctionnalité de recherche et un éditeur de texte riche pour la création de contenu. La plateforme prend en charge divers types de contenu, y compris les images, les extraits de code et les médias intégrés.",
+        "Dans le cadre de mon formation chez geeks institut j'ai travailler sur un projet reel de client KREE ,ce projet c'est une application mobile  Nommez votre prix  .",
+        " Cette application  permet aux clients de fixer le prix qu'ils sont prêts à payer pour une location, tout en offrant aux agences partenaires la possibilité de soumettre des offres compétitives.",
+        " l'application KREE fonctionne selon un modèle d'enchères inversées basé sur quatre étapes simples :",
+        "Le client propose un prix.",
+        " Le voyageur saisit ses dates de location, la catégorie de voiture et le prix qu'il est prêt à payer.",
+        " Les agences soumettent des contre-propositions.",
+        " Les agences partenaires reçoivent la proposition et répondent avec leurs meilleures offres.",
+        " Gestion automatisée des convois pour une logistique de livraison et d'enlèvement efficace .",
+        "pour plus de detaills consulter demo ",
       ],
-      bullets: [
-        "Développement d'une plateforme de blog moderne utilisant Next.js et React avec TypeScript",
-        "Mise en œuvre de Netlify CMS pour une gestion efficace du contenu",
-        "Création d'un design réactif qui privilégie la lisibilité et l'engagement des utilisateurs",
-        "Construction du rendu côté serveur pour une performance et un SEO optimaux",
-        "Intégration de MongoDB pour un stockage et une gestion flexibles du contenu",
-        "Développement de la navigation basée sur les catégories et de la fonctionnalité de recherche",
-        "Mise en œuvre de capacités d'édition de texte riche pour la création de contenu",
-      ],
+      bullets: [],
     },
   },
-];
+  {
+    id: "nextraction",
+    title: "Nextraction",
+    companyName: "",
+    type: "Academique",
+    year: 2024,
+    category: ["Web Dev"],
+    shortDescription:
+      "Est un mini projet de modele de recherche en Python qui prend en charge la recherche lexicale, la recherche sémantique, la fusion en un classement hybride et une étape de réordonnancement pour comparer les approches et présenter les résultats.",
+    websiteLink: "",
+    githubLink: "https://github.com/ikram77-up/Nextraction-projet.git",
+    techStack: ["Python", "Swagger"],
+    coverImage: "/projects/nextraction/cover.jpeg",
+    descriptionDetails: {
+      paragraphs: [
+        "Ce mini projet est un module de recherche et une petite API ou interface de ligne de commande prenant en charge : (1) la recherche lexicale (BM25 ou équivalent), (2) la recherche sémantique (embeddings), (3) la fusion en un classement hybride (par exemple, Reciprocal Rank Fusion), et (4) une étape de réordonnancement (inter-encodeur ou réordonnanceur basé sur un modèle linéaire linéaire). permet de comparer les approches et présenter les résultats",
+      ],
+      bullets: [],
+    },
+  },
+]
 
-export const featuredProjects = Projects.slice(0, 3);
+export const featuredProjects = Projects.slice(0, 3)

@@ -1,30 +1,30 @@
-import Image from "next/image";
-import Link from "next/link";
-import { redirect } from "next/navigation";
+import Image from "next/image"
+import Link from "next/link"
+import { redirect } from "next/navigation"
 
-import { Icons } from "@/components/common/icons";
-import ProjectDescription from "@/components/projects/project-description";
-import { buttonVariants } from "@/components/ui/button";
-import ChipContainer from "@/components/ui/chip-container";
-import CustomTooltip from "@/components/ui/custom-tooltip";
-import { Projects } from "@/config/projects";
-import { siteConfig } from "@/config/site";
-import { cn, formatDateFromObj } from "@/lib/utils";
-import profileImg from "@/public/profile-img.jpg";
+import { Icons } from "@/components/common/icons"
+import ProjectDescription from "@/components/projects/project-description"
+import { buttonVariants } from "@/components/ui/button"
+import ChipContainer from "@/components/ui/chip-container"
+import CustomTooltip from "@/components/ui/custom-tooltip"
+import { Projects } from "@/config/projects"
+import { siteConfig } from "@/config/site"
+import { cn } from "@/lib/utils"
+import profileImg from "@/public/profile-img.jpg"
 
 interface ProjectPageProps {
   params: Promise<{
-    projectId: string;
-  }>;
+    projectId: string
+  }>
 }
 
-const githubUsername = "ikram77-up";
+const githubUsername = "ikram77-up"
 
 export default async function Project({ params }: ProjectPageProps) {
-  const { projectId } = await params;
-  let project = Projects.find((val) => val.id === projectId);
+  const { projectId } = await params
+  let project = Projects.find((val) => val.id === projectId)
   if (!project) {
-    redirect("/projects");
+    redirect("/projects")
   }
 
   return (
@@ -37,16 +37,13 @@ export default async function Project({ params }: ProjectPageProps) {
         )}
       >
         <Icons.chevronLeft className="mr-2 h-4 w-4" />
-        All Projects
+        Tous les projets{" "}
       </Link>
       <div>
-        <time
-          dateTime={Date.now().toString()}
-          className="block text-sm text-muted-foreground"
-        >
-          {formatDateFromObj(project.startDate)}
-        </time>
-        <h1 className="flex items-center justify-between mt-2 font-heading text-4xl leading-tight lg:text-5xl">
+        {project.year && (
+          <p className="block text-sm text-muted-foreground">{project.year}</p>
+        )}
+        <h1 className="flex items-center justify-between mt-2 font-heading text-3xl leading-tight lg:text-4xl">
           {project.title}
           <div className="flex items-center">
             {project.githubLink && (
@@ -123,29 +120,28 @@ export default async function Project({ params }: ProjectPageProps) {
       {project.pagesInfoArr && (
         <div className="mb-7 ">
           <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-5">
-            Page Info
+            Présentation des interfaces de projet
           </h2>
-          {project.pagesInfoArr.map((page, ind) => (
-            <div key={ind}>
-              <h3 className="flex items-center font-heading text-xl leading-tight lg:text-xl mt-3">
-                <Icons.star className="h-5 w-5 mr-2" /> {page.title}
-              </h3>
-              <div>
-                <p>{page.description}</p>
-                {page.imgArr.map((img, ind) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            {project.pagesInfoArr.flatMap((page) =>
+              page.imgArr.map((img, imgInd) => (
+                <div
+                  key={`${page.title}-${imgInd}`}
+                  className="text-center mb-16"
+                >
                   <Image
                     src={img}
-                    key={ind}
-                    alt={img}
+                    alt={page.title}
                     width={480}
                     height={270}
-                    className="my-4 rounded-md border bg-muted transition-colors w-full max-w-lg mx-auto"
+                    className="my-4 rounded-md border bg-muted transition-transform hover:rotate-3 w-full max-w-lg mx-auto"
                     priority
                   />
-                ))}
-              </div>
-            </div>
-          ))}
+                  <p className="font-medium">{page.title}</p>
+                </div>
+              ))
+            )}
+          </div>
         </div>
       )}
 
@@ -156,9 +152,9 @@ export default async function Project({ params }: ProjectPageProps) {
           className={cn(buttonVariants({ variant: "ghost" }))}
         >
           <Icons.chevronLeft className="mr-2 h-4 w-4" />
-          All Projects
+          Tous les projets{" "}
         </Link>
       </div>
     </article>
-  );
+  )
 }

@@ -1,54 +1,53 @@
-import { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { redirect } from "next/navigation";
+import { Metadata } from "next"
+import Image from "next/image"
+import Link from "next/link"
+import { redirect } from "next/navigation"
 
-import { AnimatedSection } from "@/components/common/animated-section";
-import { ClientPageWrapper } from "@/components/common/client-page-wrapper";
-import { Icons } from "@/components/common/icons";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import ChipContainer from "@/components/ui/chip-container";
-import { ResponsiveTabs } from "@/components/ui/responsive-tabs";
-import { experiences } from "@/config/experience";
-import { siteConfig } from "@/config/site";
+import { AnimatedSection } from "@/components/common/animated-section"
+import { ClientPageWrapper } from "@/components/common/client-page-wrapper"
+import { Icons } from "@/components/common/icons"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import { ResponsiveTabs } from "@/components/ui/responsive-tabs"
+import { experiences } from "@/config/experience"
+import { siteConfig } from "@/config/site"
 
 interface ExperienceDetailPageProps {
   params: Promise<{
-    expId: string;
-  }>;
+    expId: string
+  }>
 }
 
 // Helper function to format date
 const getFormattedDate = (date: Date): string => {
-  return new Date(date).toLocaleDateString('fr-FR', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-  });
-};
+  return new Date(date).toLocaleDateString("fr-FR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  })
+}
 
 // Helper function to get duration text
 const getDurationText = (
   startDate: Date,
   endDate: Date | "Present"
 ): string => {
-  const startDateFormatted = getFormattedDate(startDate);
+  const startDateFormatted = getFormattedDate(startDate)
   const endDateFormatted =
-    typeof endDate === "string" ? "Present" : getFormattedDate(endDate);
-  return `${startDateFormatted} - ${endDateFormatted}`;
-};
+    typeof endDate === "string" ? "Present" : getFormattedDate(endDate)
+  return `${startDateFormatted} - ${endDateFormatted}`
+}
 
 export async function generateMetadata({
   params,
 }: ExperienceDetailPageProps): Promise<Metadata> {
-  const { expId } = await params;
-  const experience = experiences.find((c) => c.id === expId);
+  const { expId } = await params
+  const experience = experiences.find((c) => c.id === expId)
 
   if (!experience) {
     return {
-      title: "Experience Not Found",
-    };
+      title: "Expérience non trouvée",
+    }
   }
 
   return {
@@ -57,17 +56,17 @@ export async function generateMetadata({
     alternates: {
       canonical: `${siteConfig.url}/experience/${expId}`,
     },
-  };
+  }
 }
 
 export default async function ExperienceDetailPage({
   params,
 }: ExperienceDetailPageProps) {
-  const { expId } = await params;
-  const experience = experiences.find((c) => c.id === expId);
+  const { expId } = await params
+  const experience = experiences.find((c) => c.id === expId)
 
   if (!experience) {
-    redirect("/experience");
+    redirect("/experience")
   }
 
   const tabItems = [
@@ -98,7 +97,6 @@ export default async function ExperienceDetailPage({
       content: (
         <AnimatedSection delay={0.3}>
           <div>
-
             <ul className="space-y-3">
               {experience.achievements.map((achievement, idx) => (
                 <li
@@ -114,7 +112,7 @@ export default async function ExperienceDetailPage({
         </AnimatedSection>
       ),
     },
-  ];
+  ]
 
   return (
     <ClientPageWrapper>
@@ -187,5 +185,5 @@ export default async function ExperienceDetailPage({
         </AnimatedSection>
       </div>
     </ClientPageWrapper>
-  );
+  )
 }

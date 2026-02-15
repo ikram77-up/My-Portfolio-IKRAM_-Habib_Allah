@@ -1,7 +1,7 @@
-import { skillsInterface } from "@/config/skills";
+import { skillsInterface } from "@/config/skills"
 
 interface SkillsCardProps {
-  skills: skillsInterface[];
+  skills: skillsInterface[]
 }
 
 export default function SkillsCard({ skills }: SkillsCardProps) {
@@ -26,5 +26,5 @@ export default function SkillsCard({ skills }: SkillsCardProps) {
         </span>
       ))}
     </div>
-  );
+  )
 }

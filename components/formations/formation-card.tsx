@@ -1,27 +1,27 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import React from "react";
+import Image from "next/image"
+import React from "react"
 
-import { FormationInterface } from "@/config/formations";
+import { FormationInterface } from "@/config/formations"
 
 const getYearFromDate = (date: Date): string => {
-  return new Date(date).getFullYear().toString();
-};
+  return new Date(date).getFullYear().toString()
+}
 
 // Helper function to get duration text
 const getDurationText = (
   startDate: Date,
   endDate: Date | "Present" | "En cours"
 ): string => {
-  const startYear = getYearFromDate(startDate);
+  const startYear = getYearFromDate(startDate)
   const endYear =
-    typeof endDate === "string" ? endDate : getYearFromDate(endDate);
-  return `${startYear} - ${endYear}`;
-};
+    typeof endDate === "string" ? endDate : getYearFromDate(endDate)
+  return `${startYear} - ${endYear}`
+}
 
 interface FormationCardProps {
-  formation: FormationInterface;
+  formation: FormationInterface
 }
 
 const FormationCard: React.FC<FormationCardProps> = ({ formation }) => {
@@ -58,7 +58,7 @@ const FormationCard: React.FC<FormationCardProps> = ({ formation }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FormationCard;
+export default FormationCard

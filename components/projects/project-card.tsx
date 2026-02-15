@@ -1,13 +1,13 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 
-import { Icons } from "@/components/common/icons";
-import { Button } from "@/components/ui/button";
-import ChipContainer from "@/components/ui/chip-container";
-import { ProjectInterface } from "@/config/projects";
+import { Icons } from "@/components/common/icons"
+import { Button } from "@/components/ui/button"
+import ChipContainer from "@/components/ui/chip-container"
+import { ProjectInterface } from "@/config/projects"
 
 interface ProjectCardProps {
-  project: ProjectInterface;
+  project: ProjectInterface
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
@@ -15,7 +15,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     <div className="relative p-6 max-w-sm bg-background border border-border rounded-lg">
       <div className="relative w-full h-[200px]">
         <Image
-          className="rounded-lg border border-border object-cover"
+          className="rounded-lg border border-border object-cover transition-transform hover:rotate-3"
           src={project.coverImage}
           alt="img"
           fill
@@ -38,7 +38,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
         <Link href={`/projects/${project.id}`}>
           <Button variant={"default"} className="mt-2">
-            Read more
+            En savoir plus
             <Icons.chevronRight className="w-4 ml-1" />
           </Button>
         </Link>
@@ -51,5 +51,5 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         )}
       </div>
     </div>
-  );
+  )
 }

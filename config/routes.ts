@@ -21,4 +21,4 @@ export const routesConfig: any = {
       href: "/contact",
     },
   ],
-};
+}

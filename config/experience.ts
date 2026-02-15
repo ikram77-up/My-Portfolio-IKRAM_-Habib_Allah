@@ -1,15 +1,13 @@
-
-
 export interface ExperienceInterface {
-  id: string;
-  position: string;
-  company: string;
-  location: string;
-  startDate: Date;
-  endDate: Date | "Present";
-  description: string[];
-  achievements: string[];
-  logo?: string;
+  id: string
+  position: string
+  company: string
+  location: string
+  startDate: Date
+  endDate: Date | "Present"
+  description: string[]
+  achievements: string[]
+  logo?: string
 }
 
 export const experiences: ExperienceInterface[] = [
@@ -22,7 +20,7 @@ export const experiences: ExperienceInterface[] = [
     endDate: new Date("2025-07-10"),
     description: [
       "Gestion du CRM, du reporting, des fichiers de contacts et des outils de gestion de contenu (CMS) ",
-      "Création et développement de site web de l’entreprise ‘MB Digital & Business avec Word press ,HTML , CSS , Java Script "
+      "Création et développement de site web de l’entreprise ‘MB Digital & Business avec Word press ,HTML , CSS , Java Script ",
     ],
     achievements: [
       "chargé de la gestion du CRM et des outils de gestion de contenu (CMS), création de  reporting , des fichiers de contacts  chaque jours et contrôler les agents pendant les appels ",
@@ -66,20 +64,17 @@ export const experiences: ExperienceInterface[] = [
     logo: "/experience/RED360.png",
   },
   {
-    id:"WordPress",
-    position  :"Stage de Fin de Formation en développement web",
-    company : "RED TIC",
-    location : " Sidi Maarouf ,Casablanca ,Maroc ",
-    startDate : new Date("2018-12-31"),
-    endDate : new Date("2019-02-28"),
-    description:[
-      "Réalisation d’un site web IHA Agency",
-    ],
-    achievements:[
+    id: "WordPress",
+    position: "Stage de Fin de Formation en développement web",
+    company: "RED TIC",
+    location: " Sidi Maarouf ,Casablanca ,Maroc ",
+    startDate: new Date("2018-12-31"),
+    endDate: new Date("2019-02-28"),
+    description: ["Réalisation d’un site web IHA Agency"],
+    achievements: [
       "conception et réalisation de site (Word Press , Wamp,PHP ,MySQL)",
       "Hébergement de site (LWS)",
     ],
-    logo : "/experience/REDTIC.png"
-  }
- 
-];
+    logo: "/experience/REDTIC.png",
+  },
+]

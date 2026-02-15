@@ -1,38 +1,44 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import React from "react";
+import Image from "next/image"
+import React from "react"
 
-import { AnimatedSection } from "@/components/common/animated-section";
-import { FormationInterface } from "@/config/formations";
+import { AnimatedSection } from "@/components/common/animated-section"
+import { FormationInterface } from "@/config/formations"
 
 // Helper function to extract year from date
 const getYearFromDate = (date: Date): string => {
-  return new Date(date).getFullYear().toString();
-};
+  return new Date(date).getFullYear().toString()
+}
 
 // Helper function to get duration text
 const getDurationText = (
   startDate: Date,
   endDate: Date | "Present" | "En cours"
 ): string => {
-  const startYear = getYearFromDate(startDate);
+  const startYear = getYearFromDate(startDate)
   const endYear =
-    typeof endDate === "string" ? endDate : getYearFromDate(endDate);
-  return `${startYear} - ${endYear}`;
-};
+    typeof endDate === "string" ? endDate : getYearFromDate(endDate)
+  return `${startYear} - ${endYear}`
+}
 
 interface TimelineProps {
-  formations: FormationInterface[];
+  formations: FormationInterface[]
 }
 
 const Timeline: React.FC<TimelineProps> = ({ formations }) => {
   // Sort formations by date (most recent first)
   const sortedFormations = [...formations].sort((a, b) => {
-    const dateA = a.endDate === "Present" || a.endDate === "En cours" ? new Date() : a.endDate;
-    const dateB = b.endDate === "Present" || b.endDate === "En cours" ? new Date() : b.endDate;
-    return dateB.getTime() - dateA.getTime();
-  });
+    const dateA =
+      a.endDate === "Present" || a.endDate === "En cours"
+        ? new Date()
+        : a.endDate
+    const dateB =
+      b.endDate === "Present" || b.endDate === "En cours"
+        ? new Date()
+        : b.endDate
+    return dateB.getTime() - dateA.getTime()
+  })
 
   return (
     <div className="space-y-4">
@@ -62,10 +68,7 @@ const Timeline: React.FC<TimelineProps> = ({ formations }) => {
                       {formation.degree}
                     </h3>
                     <span className="inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-primary/10 text-primary border border-primary/20 w-fit">
-                      {getDurationText(
-                        formation.startDate,
-                        formation.endDate
-                      )}
+                      {getDurationText(formation.startDate, formation.endDate)}
                     </span>
                   </div>
                   <div className="flex items-center gap-2 mb-1">
@@ -80,7 +83,7 @@ const Timeline: React.FC<TimelineProps> = ({ formations }) => {
         </AnimatedSection>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Timeline;
+export default Timeline

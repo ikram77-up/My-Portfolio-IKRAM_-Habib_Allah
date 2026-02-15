@@ -7,6 +7,7 @@ import {
   ChevronDown,
   ChevronLeft,
   ChevronRight,
+  ChevronUp,
   CreditCard,
   File,
   FileText,
@@ -17,11 +18,9 @@ import {
   Loader2,
   LucideProps,
   Menu,
-  MessageCircle,
   Moon,
   MoreVertical,
   Music,
-  Palette,
   Phone,
   Pizza,
   Plus,
@@ -33,17 +32,16 @@ import {
   Trash,
   User,
   X,
-  Zap,
-} from "lucide-react";
-import { AiFillStar } from "react-icons/ai";
-import { BiLaugh, BiSolidUser } from "react-icons/bi";
-import { BsInfoCircle, BsQuestionCircle } from "react-icons/bs";
+} from "lucide-react"
+import { AiFillStar } from "react-icons/ai"
+import { BiLaugh, BiSolidUser } from "react-icons/bi"
+import { BsInfoCircle, BsQuestionCircle } from "react-icons/bs"
 import {
   HiBriefcase,
   HiOutlineExternalLink,
   HiOutlineLink,
-} from "react-icons/hi";
-import { IoIosGitBranch } from "react-icons/io";
+} from "react-icons/hi"
+import { IoIosGitBranch } from "react-icons/io"
 import {
   SiAmazonwebservices,
   SiAngular,
@@ -70,7 +68,23 @@ import {
   SiTypescript,
   SiWhatsapp,
   SiX,
-} from "react-icons/si";
+} from "react-icons/si"
+
+const ChevronUpStyled = (props: LucideProps) => (
+  <div
+    style={{
+      width: "45px",
+      height: "45px",
+      borderRadius: "8px",
+      backgroundColor: "black",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    }}
+  >
+    <ChevronUp {...props} color="#FFFFFF" size={28} />
+  </div>
+)
 
 export const Icons = {
   contact: Phone,
@@ -92,6 +106,7 @@ export const Icons = {
   warning: AlertTriangle,
   user: User,
   arrowRight: ArrowRight,
+  arrowUp: ChevronUpStyled,
   help: HelpCircle,
   pizza: Pizza,
   sun: SunMedium,
@@ -320,5 +335,4 @@ export const Icons = {
       </svg>
     </div>
   ),
-
-};
+}

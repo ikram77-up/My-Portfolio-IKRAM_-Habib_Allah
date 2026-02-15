@@ -1,10 +1,10 @@
-import { Metadata } from "next";
+import { Metadata } from "next"
 
-import PageContainer from "@/components/common/page-container";
-import Timeline from "@/components/formations/timeline";
-import { formations } from "@/config/formations";
-import { pagesConfig } from "@/config/pages";
-import { siteConfig } from "@/config/site";
+import PageContainer from "@/components/common/page-container"
+import Timeline from "@/components/formations/timeline"
+import { formations } from "@/config/formations"
+import { pagesConfig } from "@/config/pages"
+import { siteConfig } from "@/config/site"
 
 export const metadata: Metadata = {
   title: `${pagesConfig.formations.metadata.title} | Educational Background`,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteConfig.url}/formations`,
   },
-};
+}
 
 export default function FormationsPage() {
   return (
@@ -29,5 +29,5 @@ export default function FormationsPage() {
     >
       <Timeline formations={formations} />
     </PageContainer>
-  );
+  )
 }

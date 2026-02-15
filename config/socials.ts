@@ -1,10 +1,10 @@
-import { Icons } from "@/components/common/icons";
+import { Icons } from "@/components/common/icons"
 
 interface SocialInterface {
-  name: string;
-  username: string;
-  icon: any;
-  link: string;
+  name: string
+  username: string
+  icon: any
+  link: string
 }
 
 export const SocialLinks: SocialInterface[] = [
@@ -38,4 +38,4 @@ export const SocialLinks: SocialInterface[] = [
     icon: Icons.whatsapp,
     link: "https://wa.me/212620785160",
   },
-];
+]

@@ -30,6 +30,7 @@ export type ValidSkills =
   | "Git"
   | "CI/CD"
   | "Jenkins"
+  | "Swagger"
   | "FastAPI"
   | "Django"
   | "Vue.js"
@@ -60,7 +61,14 @@ export type ValidSkills =
   | "FastAPI"
   | "SQL"
   | "NoSQL"
-  | "Framer Motion";
+  | "Framer Motion"
+  | "WordPress"
+  | "CMS"
+  | "LWS"
+  | "Java/JEE "
+  | "Spring MVC"
+  | "TypeScript"
+  | "Zakra theme"
 
 export type ValidCategory =
   | "Full Stack"
@@ -69,9 +77,9 @@ export type ValidCategory =
   | "UI/UX"
   | "Web Dev"
   | "Mobile Dev"
-  | "3D Modeling";
+  | "3D Modeling"
 
-export type ValidExpType = "Personal" | "Professional";
+export type ValidExpType = "Personal" | "Professional" | "Academique"
 
 export type ValidPages =
   | "home"
@@ -80,4 +88,4 @@ export type ValidPages =
   | "experience"
   | "formations"
   | "contact"
-  | "resume";
+  | "resume"

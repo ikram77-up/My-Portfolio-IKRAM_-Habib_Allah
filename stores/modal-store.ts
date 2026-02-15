@@ -1,20 +1,20 @@
-import { create } from "zustand";
+import { create } from "zustand"
 
 interface ModalDataProps {
-  title: string;
-  description: string;
-  icon: any;
-  onCloseCallback?: () => void;
+  title: string
+  description: string
+  icon: any
+  onCloseCallback?: () => void
 }
 
 interface ModalStoreProps {
-  isOpen: boolean;
-  title: string;
-  description: string;
-  icon: any;
-  onCloseCallback?: () => void;
-  onOpen: (data: ModalDataProps) => void;
-  onClose: () => void;
+  isOpen: boolean
+  title: string
+  description: string
+  icon: any
+  onCloseCallback?: () => void
+  onOpen: (data: ModalDataProps) => void
+  onClose: () => void
 }
 
 export const useModalStore = create<ModalStoreProps>((set, get) => ({
@@ -32,13 +32,13 @@ export const useModalStore = create<ModalStoreProps>((set, get) => ({
       onCloseCallback: data.onCloseCallback,
     }),
   onClose: () => {
-    get().onCloseCallback?.();
+    get().onCloseCallback?.()
     set({
       isOpen: false,
       title: "",
       description: "",
       icon: null,
       onCloseCallback: undefined,
-    });
+    })
   },
-}));
+}))

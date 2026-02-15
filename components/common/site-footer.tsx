@@ -1,10 +1,10 @@
-import Link from "next/link";
-import * as React from "react";
+import Link from "next/link"
+import * as React from "react"
 
-import { buttonVariants } from "@/components/ui/button";
-import CustomTooltip from "@/components/ui/custom-tooltip";
-import { SocialLinks } from "@/config/socials";
-import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button"
+import CustomTooltip from "@/components/ui/custom-tooltip"
+import { SocialLinks } from "@/config/socials"
+import { cn } from "@/lib/utils"
 
 export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
   return (
@@ -29,5 +29,5 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
         ))}
       </div>
     </footer>
-  );
+  )
 }

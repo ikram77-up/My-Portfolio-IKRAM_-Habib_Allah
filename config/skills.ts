@@ -1,5 +1,5 @@
 export interface skillsInterface {
-  name: string;
+  name: string
 }
 
 export const skillsUnsorted: skillsInterface[] = [
@@ -12,8 +12,8 @@ export const skillsUnsorted: skillsInterface[] = [
   { name: "JPA" },
   { name: " architecture Micro Services" },
   { name: "MongoDB" },
-  {name : "MySQL"},
-  {name :"PostgreSQL" },
+  { name: "MySQL" },
+  { name: "PostgreSQL" },
   { name: "Typescript" },
   { name: "Javascript" },
   { name: "HTML 5" },
@@ -33,8 +33,6 @@ export const skillsUnsorted: skillsInterface[] = [
   { name: "UML" },
   { name: "MERISE" },
   { name: " Méthode Agile/Scrum" },
+]
 
-];
-
-export const featuredSkills = skillsUnsorted.slice(0, 6);
-
+export const featuredSkills = skillsUnsorted.slice(0, 6)

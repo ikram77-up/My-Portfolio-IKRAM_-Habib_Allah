@@ -1,45 +1,45 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import Image from "next/image"
+import Link from "next/link"
+import React from "react"
 
-import { AnimatedSection } from "@/components/common/animated-section";
-import { Icons } from "@/components/common/icons";
-import { Button } from "@/components/ui/button";
-import { ExperienceInterface } from "@/config/experience";
+import { AnimatedSection } from "@/components/common/animated-section"
+import { Icons } from "@/components/common/icons"
+import { Button } from "@/components/ui/button"
+import { ExperienceInterface } from "@/config/experience"
 
 // Helper function to format date
 const getFormattedDate = (date: Date): string => {
-  return new Date(date).toLocaleDateString('fr-FR', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-  });
-};
+  return new Date(date).toLocaleDateString("fr-FR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  })
+}
 
 // Helper function to get duration text
 const getDurationText = (
   startDate: Date,
   endDate: Date | "Present"
 ): string => {
-  const startDateFormatted = getFormattedDate(startDate);
+  const startDateFormatted = getFormattedDate(startDate)
   const endDateFormatted =
-    typeof endDate === "string" ? "Present" : getFormattedDate(endDate);
-  return `${startDateFormatted} - ${endDateFormatted}`;
-};
+    typeof endDate === "string" ? "Present" : getFormattedDate(endDate)
+  return `${startDateFormatted} - ${endDateFormatted}`
+}
 
 interface TimelineProps {
-  experiences: ExperienceInterface[];
+  experiences: ExperienceInterface[]
 }
 
 const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
   // Sort experiences by date (most recent first)
   const sortedExperiences = [...experiences].sort((a, b) => {
-    const dateA = a.endDate === "Present" ? new Date() : a.endDate;
-    const dateB = b.endDate === "Present" ? new Date() : b.endDate;
-    return dateB.getTime() - dateA.getTime();
-  });
+    const dateA = a.endDate === "Present" ? new Date() : a.endDate
+    const dateB = b.endDate === "Present" ? new Date() : b.endDate
+    return dateB.getTime() - dateA.getTime()
+  })
 
   return (
     <div className="space-y-4">
@@ -104,7 +104,7 @@ const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
         </AnimatedSection>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Timeline;
+export default Timeline

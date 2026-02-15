@@ -1,16 +1,16 @@
-import { ValidPages } from "./constants";
+import { ValidPages } from "./constants"
 
 type PagesConfig = {
   [key in ValidPages]: {
-    title: string;
-    description: string;
+    title: string
+    description: string
     metadata: {
-      title: string;
-      description: string;
-    };
+      title: string
+      description: string
+    }
     // featuredDescription: string;
-  };
-};
+  }
+}
 
 export const pagesConfig: PagesConfig = {
   home: {
@@ -22,25 +22,29 @@ export const pagesConfig: PagesConfig = {
     },
   },
   skills: {
-    title: " Compétences ",
-    description: "Mes compétences professionnelle .",
     metadata: {
-      title: "Skills",
+      title: "Compétences",
       description:
-        "Ikram Habib Allah's key skills that define his professional identity.",
+        "Les compétences clés d'Ikram Habib Allah qui définissent son identité professionnelle.",
     },
+    title: "Compétences",
+    description:
+      "Les compétences clés d'Ikram Habib Allah qui définissent son identité professionnelle.",
   },
   projects: {
-    title: "Projets",
-    description: "Présentation de mes projets academiques et professionnelles .",
     metadata: {
-      title: "Projects",
-      description: "Ikram Habib Allah's projects in building web applications.",
+      title: "Projets",
+      description:
+        "Les projets d'Ikram Habib Allah dans la création d'applications web.",
     },
+    title: "Projets",
+    description:
+      "Les projets d'Ikram Habib Allah dans la création d'applications web.",
   },
   contact: {
     title: "Contact",
-    description: "Prenons contact et explorons les possibilités de collaboration..",
+    description:
+      "Prenons contact et explorons les possibilités de collaboration..",
     metadata: {
       title: "Contact",
       description: "Contact Ikram Habib Allah.",
@@ -59,17 +63,17 @@ export const pagesConfig: PagesConfig = {
     title: "Expériences ",
     description: "mes expériences Mon parcours profesionnel.",
     metadata: {
-      title: "Experiences",
-                  description: "Ikram Habib Allah's Mon parcours profesionnel .",
-                  },
-                },
-                formations: {
-                  title: "Formations",
-                  description: "Mes formations et mes qualifications académiques.",
-                  metadata: {
-                    title: "Formations",
-                    description:
-                      "Ikram Habib Allah's educational background and academic qualifications.",
-                  },
-                },
-              };
+      title: "Expériences",
+      description: "Ikram Habib Allah's Mon parcours profesionnel .",
+    },
+  },
+  formations: {
+    title: "Formations",
+    description: "Mes formations et mes qualifications académiques.",
+    metadata: {
+      title: "Formations",
+      description:
+        "Ikram Habib Allah's educational background and academic qualifications.",
+    },
+  },
+}

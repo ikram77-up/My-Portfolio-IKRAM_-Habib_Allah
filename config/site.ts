@@ -32,4 +32,4 @@ export const siteConfig = {
     "Frontend Developer",
     "Tech Portfolio",
   ],
-};
+}

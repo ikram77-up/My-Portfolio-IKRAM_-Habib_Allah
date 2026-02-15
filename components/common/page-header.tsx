@@ -1,6 +1,6 @@
 interface PageHeaderProps {
-  title: string;
-  description: string;
+  title: string
+  description: string
 }
 
 export default function PageHeader({ title, description }: PageHeaderProps) {
@@ -16,5 +16,5 @@ export default function PageHeader({ title, description }: PageHeaderProps) {
       </div>
       <hr className="my-6" />
     </>
-  );
+  )
 }

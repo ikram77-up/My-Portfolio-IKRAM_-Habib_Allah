@@ -1,19 +1,19 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { Norican } from "next/font/google";
-import Link from "next/link";
-import { usePathname, useSelectedLayoutSegment } from "next/navigation";
-import * as React from "react";
+import { motion } from "framer-motion"
+import { Norican } from "next/font/google"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import * as React from "react"
 
-import { Icons } from "@/components/common/icons";
-import { MobileNav } from "@/components/common/mobile-nav";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
+import { Icons } from "@/components/common/icons"
+import { MobileNav } from "@/components/common/mobile-nav"
+import { siteConfig } from "@/config/site"
+import { cn } from "@/lib/utils"
 
 interface MainNavProps {
-  items?: any[];
-  children?: React.ReactNode;
+  items?: any[]
+  children?: React.ReactNode
 }
 
 const norican = Norican({
@@ -21,7 +21,7 @@ const norican = Norican({
   style: ["normal"],
   subsets: ["latin"],
   display: "swap",
-});
+})
 
 // Animation variants for the navigation items
 const navItemVariants = {
@@ -35,16 +35,15 @@ const navItemVariants = {
       ease: "easeOut" as const,
     },
   }),
-};
+}
 
 export function MainNav({ items, children }: MainNavProps) {
-  const segment = useSelectedLayoutSegment();
-  const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false);
-  const pathname = usePathname();
+  const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false)
+  const pathname = usePathname()
 
   React.useEffect(() => {
-    setShowMobileMenu(false);
-  }, [pathname]);
+    setShowMobileMenu(false)
+  }, [pathname])
 
   return (
     <div className="flex gap-6 md:gap-10">
@@ -61,30 +60,34 @@ export function MainNav({ items, children }: MainNavProps) {
       </motion.div>
       {items?.length ? (
         <nav className="hidden gap-6 md:flex items-center">
-          {items?.map((item, index) => (
-            <motion.div
-              key={index}
-              custom={index}
-              initial="hidden"
-              animate="visible"
-              variants={navItemVariants}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link
-                href={item.disabled ? "#" : item.href}
-                className={cn(
-                  "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm",
-                  item.href.startsWith(`/${segment}`)
-                    ? "text-foreground"
-                    : "text-foreground/60",
-                  item.disabled && "cursor-not-allowed opacity-80"
-                )}
+          {items?.map((item, index) => {
+            const isActive =
+              item.href === "/#skills"
+                ? pathname === "/"
+                : pathname.startsWith(item.href)
+            return (
+              <motion.div
+                key={index}
+                custom={index}
+                initial="hidden"
+                animate="visible"
+                variants={navItemVariants}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                {item.title}
-              </Link>
-            </motion.div>
-          ))}
+                <Link
+                  href={item.disabled ? "#" : item.href}
+                  className={cn(
+                    "flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm",
+                    isActive ? "text-foreground" : "text-foreground/60",
+                    item.disabled && "cursor-not-allowed opacity-80"
+                  )}
+                >
+                  {item.title}
+                </Link>
+              </motion.div>
+            )
+          })}
         </nav>
       ) : null}
       <motion.button
@@ -100,5 +103,5 @@ export function MainNav({ items, children }: MainNavProps) {
         <MobileNav items={items}>{children}</MobileNav>
       )}
     </div>
-  );
+  )
 }

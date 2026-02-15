@@ -1,11 +1,11 @@
 export interface FormationInterface {
-  id: string;
-  degree: string;
-  school: string;
-  startDate: Date;
-  endDate: Date | "Present" | "En cours";
-  description: string[];
-  logo?: string;
+  id: string
+  degree: string
+  school: string
+  startDate: Date
+  endDate: Date | "Present" | "En cours"
+  description: string[]
+  logo?: string
 }
 
 export const formations: FormationInterface[] = [
@@ -45,4 +45,4 @@ export const formations: FormationInterface[] = [
     description: [],
     logo: "/formations/GI.png",
   },
-];
+]

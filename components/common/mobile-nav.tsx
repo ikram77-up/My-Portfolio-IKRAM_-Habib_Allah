@@ -1,14 +1,15 @@
-import { Norican } from "next/font/google";
-import Link from "next/link";
-import * as React from "react";
+import { Norican } from "next/font/google"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import * as React from "react"
 
-import { siteConfig } from "@/config/site";
-import { useLockBody } from "@/hooks/use-lock-body";
-import { cn } from "@/lib/utils";
+import { siteConfig } from "@/config/site"
+import { useLockBody } from "@/hooks/use-lock-body"
+import { cn } from "@/lib/utils"
 
 interface MobileNavProps {
-  items: any[];
-  children?: React.ReactNode;
+  items: any[]
+  children?: React.ReactNode
 }
 
 const norican = Norican({
@@ -16,10 +17,11 @@ const norican = Norican({
   style: ["normal"],
   subsets: ["latin"],
   display: "swap",
-});
+})
 
 export function MobileNav({ items, children }: MobileNavProps) {
-  useLockBody();
+  useLockBody()
+  const pathname = usePathname()
 
   return (
     <div
@@ -34,21 +36,28 @@ export function MobileNav({ items, children }: MobileNavProps) {
           </span>
         </Link>
         <nav className="grid grid-flow-row auto-rows-max text-sm">
-          {items.map((item, index) => (
-            <Link
-              key={index}
-              href={item.disabled ? "#" : item.href}
-              className={cn(
-                "flex w-full items-center rounded-md p-2 text-sm font-medium hover:underline",
-                item.disabled && "cursor-not-allowed opacity-60"
-              )}
-            >
-              {item.title}
-            </Link>
-          ))}
+          {items.map((item, index) => {
+            const isActive =
+              item.href === "/#skills"
+                ? pathname === "/"
+                : pathname.startsWith(item.href)
+            return (
+              <Link
+                key={index}
+                href={item.disabled ? "#" : item.href}
+                className={cn(
+                  "flex w-full items-center rounded-md p-2 text-sm font-medium hover:underline",
+                  isActive ? "text-foreground" : "text-foreground/60",
+                  item.disabled && "cursor-not-allowed opacity-60"
+                )}
+              >
+                {item.title}
+              </Link>
+            )
+          })}
         </nav>
         {children ? <div className="pt-2">{children}</div> : null}
       </div>
     </div>
-  );
+  )
 }

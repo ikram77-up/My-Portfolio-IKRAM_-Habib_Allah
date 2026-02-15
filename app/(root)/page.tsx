@@ -1,27 +1,27 @@
-import { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import Script from "next/script";
+import { Metadata } from "next"
+import Image from "next/image"
+import Link from "next/link"
+import Script from "next/script"
 
-import { AnimatedSection } from "@/components/common/animated-section";
-import { AnimatedText } from "@/components/common/animated-text";
-import { ClientPageWrapper } from "@/components/common/client-page-wrapper";
-import { Icons } from "@/components/common/icons";
+import { AnimatedSection } from "@/components/common/animated-section"
+import { AnimatedText } from "@/components/common/animated-text"
+import { ClientPageWrapper } from "@/components/common/client-page-wrapper"
+import { Icons } from "@/components/common/icons"
 
-import ExperienceCard from "@/components/experience/experience-card";
-import ProjectCard from "@/components/projects/project-card";
-import SkillsCard from "@/components/skills/skills-card";
-import { Button, buttonVariants } from "@/components/ui/button";
+import ExperienceCard from "@/components/experience/experience-card"
+import ProjectCard from "@/components/projects/project-card"
+import SkillsCard from "@/components/skills/skills-card"
+import { Button, buttonVariants } from "@/components/ui/button"
 
-import { experiences } from "@/config/experience";
-import { pagesConfig } from "@/config/pages";
-import { featuredProjects } from "@/config/projects";
-import { siteConfig } from "@/config/site";
-import FormationCard from "@/components/formations/formation-card";
-import { formations } from "@/config/formations";
-import { skillsUnsorted } from "@/config/skills";
-import { cn } from "@/lib/utils";
-import profileImg from "@/public/profile-img.jpg";
+import FormationCard from "@/components/formations/formation-card"
+import { experiences } from "@/config/experience"
+import { formations } from "@/config/formations"
+import { pagesConfig } from "@/config/pages"
+import { featuredProjects } from "@/config/projects"
+import { siteConfig } from "@/config/site"
+import { skillsUnsorted } from "@/config/skills"
+import { cn } from "@/lib/utils"
+import profileImg from "@/public/profile-img.jpg"
 
 export const metadata: Metadata = {
   title: `${pagesConfig.home.metadata.title}`,
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteConfig.url,
   },
-};
+}
 
 export default function IndexPage() {
   const featuredFormations = formations.filter(
@@ -38,7 +38,7 @@ export default function IndexPage() {
       f.school === "Geeks Institut La Startup Station" ||
       f.school === "École marocaine des sciences de l'ingénieur(EMSI)" ||
       f.school === "OFPPT CFMONTIC ISTA INTIC 1"
-  );
+  )
   // Structured data for personal portfolio
   const personSchema = {
     "@context": "https://schema.org",
@@ -48,7 +48,7 @@ export default function IndexPage() {
     image: siteConfig.ogImage,
     jobTitle: "Computer and network engineer ",
     sameAs: [siteConfig.links.github, siteConfig.links],
-  };
+  }
 
   // Structured data for website as a software application (template)
   const softwareSchema = {
@@ -67,7 +67,7 @@ export default function IndexPage() {
       name: siteConfig.authorName,
       url: siteConfig.url,
     },
-  };
+  }
 
   return (
     <ClientPageWrapper>
@@ -94,9 +94,9 @@ export default function IndexPage() {
             priority
           />
           <AnimatedText
-           as="h1"
-           delay={0.2}
-           className="font-heading text-2xl sm:text-4xl md:text-5xl lg:text-6xl"
+            as="h1"
+            delay={0.2}
+            className="font-heading text-2xl sm:text-4xl md:text-5xl lg:text-6xl"
           >
             Ikram Habib Allah
           </AnimatedText>
@@ -109,8 +109,11 @@ export default function IndexPage() {
           </AnimatedText>
           <div className="mt-4 max-w-[42rem] text-center">
             <p className="leading-normal text-muted-foreground text-sm sm:text-base">
-             Je suis ingénieur en informatique et réseaux, spécialisé MIAGE, développeur full-stack, en développement logiciel et en intelligence artificielle.
-              Bienvenue sur mon portfolio où je présente mes compétences, mes projets et mon expérience dans le monde de la tech.
+              Salut je suis Ikram Habib Allah ingénieur en informatique et
+              réseaux, spécialisé MIAGE, développeur full-stack, en
+              développement logiciel et en intelligence artificielle. Bienvenue
+              sur mon portfolio où je présente mes compétences, mes projets et
+              mon expérience dans le monde de la tech.
             </p>
           </div>
 
@@ -291,5 +294,5 @@ export default function IndexPage() {
         </AnimatedText>
       </AnimatedSection>
     </ClientPageWrapper>
-  );
+  )
 }
